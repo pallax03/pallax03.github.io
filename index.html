@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>flavia troppo carina</title>
+    <style>
+        /* CSS styles for the buttons */
+        *{font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 100px;}
+        body {height: 100vh;}
+        .center {
+            position: relative;
+            top: 400px;
+            text-align: center;
+            margin: auto;
+            width: auto;
+        }
+        h1 {width: auto; font-size: 150px; padding: 0; margin: 0;}
+        h2 {width: auto; font-size: 80px; padding: 0; margin: 0;}
+        .buttons {
+            display: flex;
+            text-align: center;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .button {
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            width: 400px;
+            border-radius: 8px;
+            color: white;
+        }
+        #si {           
+            border: 3px solid #2fbc33;
+            background-color: #2fbc33;
+        }
+        #no {
+            border: 3px solid #ba1515;
+            background-color: #ba1515;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="center" id="all">
+        <h1>mi ami?</h1>
+        <div class="buttons">
+            <button class="button" onclick="accept()" id="si" >Si</button>
+            <button class="button" onmouseover="decline()" id="no">No</button>
+        </div>
+    </div>
+    
+    
+    <script>
+        function accept() {
+            document.getElementById("all").innerHTML = "<h2>Grazie amore mio, ti amo anche io</h2>"
+        }
+
+        function decline() {
+            var button = document.getElementById('no');
+
+            // Generate random coordinates for the new position
+            var newX = Math.floor(Math.random() * (window.innerWidth - button.clientWidth));
+            var newY = Math.floor(Math.random() * (window.innerHeight - button.clientHeight));
+
+            // Update the button's style to set its new position
+            button.style.position = "absolute";
+            button.style.left = newX + 'px';
+            button.style.top = newY + 'px';
+        }
+    </script>
+</body>
+</html>
