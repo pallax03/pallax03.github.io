@@ -27,6 +27,7 @@
             margin: 10px;
             border: none;
             cursor: pointer;
+            height: 150px;
             width: 400px;
             border-radius: 8px;
             color: white;
@@ -44,30 +45,34 @@
 <body>
 
     <div class="center" id="all">
-        <h1>mi ami?</h1>
+        <h1>facciamo pace?</h1>
         <div class="buttons">
             <button class="button" onclick="accept()" id="si" >Si</button>
-            <button class="button" onmouseover="decline()" id="no">No</button>
+            <button class="button" onclick="decline()" id="no">No</button>
         </div>
     </div>
     
     
     <script>
         function accept() {
-            document.getElementById("all").innerHTML = "<h2>Grazie amore mio, ti amo anche io</h2>"
+            document.getElementById("all").innerHTML = "<h2>ALLORA DIMMI COSE CARINE E RASSICURAMI IN TUTTO IL PERIODO DELLA VACANZA CON LE TUE AMICHE</h2>"
+            + "<p style='font-size: 28px;'>ah e non sono stronzo e nemmeno odioso con te, anzi mi manchi veramente tanto e non vedo l'ora sia il primo cosi posso stringerti forte forte"
+            + "</br>AH e voglio che ritorni la flavia dolce che avevo prima della gita, PER FAVOREEEEEE</p>" + "<p>ti amo tanto amore <3</p>"
         }
 
         function decline() {
-            var button = document.getElementById('no');
+            const DELTA = 100; 
+            var buttonYes = document.getElementById('si');
+            var buttonNo = document.getElementById('no');
 
             // Generate random coordinates for the new position
-            var newX = Math.floor(Math.random() * (window.innerWidth - button.clientWidth));
-            var newY = Math.floor(Math.random() * (window.innerHeight - button.clientHeight));
 
             // Update the button's style to set its new position
-            button.style.position = "absolute";
-            button.style.left = newX + 'px';
-            button.style.top = newY + 'px';
+            buttonNo.style.width = (DELTA - buttonNo.offsetWidth) + "px";
+            buttonNo.style.height = (DELTA - buttonNo.offsetHeight) + "px";
+
+            buttonYes.style.width = (DELTA + buttonYes.offsetWidth) + "px";
+            buttonYes.style.height = (DELTA + buttonYes.offsetHeight) + "px";
         }
     </script>
 </body>
